@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ChatGPT + Claude — Video kurs</title>
+<meta name="description" content="İki süni intellekt köməkçisi ilə ilk addımdan işləməyi öyrənin. 2 modul, 20 video dərs.">
+<meta name="theme-color" content="#C8561F">
+<link rel="canonical" href="https://chatgpt-claude-kurs.netlify.app/">
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- Open Graph (Instagram, WhatsApp, Facebook, Telegram) -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="az_AZ">
+<meta property="og:site_name" content="ChatGPT + Claude">
+<meta property="og:title" content="ChatGPT + Claude — Video kurs">
+<meta property="og:description" content="İki süni intellekt köməkçisi ilə ilk addımdan işləməyi öyrənin. 2 modul, 20 video dərs.">
+<meta property="og:url" content="https://chatgpt-claude-kurs.netlify.app/">
+<meta property="og:image" content="https://chatgpt-claude-kurs.netlify.app/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ChatGPT + Claude video kursu">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ChatGPT + Claude — Video kurs">
+<meta name="twitter:description" content="İki süni intellekt köməkçisi ilə ilk addımdan işləməyi öyrənin. 2 modul, 20 video dərs.">
+<meta name="twitter:image" content="https://chatgpt-claude-kurs.netlify.app/og-image.jpg">
+
+<link rel="preload" as="image" href="assets/flower-1600.webp" imagesrcset="assets/flower-800.webp 800w, assets/flower-1600.webp 1215w" imagesizes="(max-width: 960px) 100vw, 43vw">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #C8561F;
+    --orange-deep: #B84F1D;
+    --cream: #F6EEE5;
+    --peach: #FAD8BA;
+    --ink: #2A1C14;
+    --brown: #2E1F17;
+    --brown-card: #452F20;
+    --line: #E6D9CB;
+    --white: #FFFFFF;
+    --display: "Unbounded", system-ui, sans-serif;
+    --body: "Manrope", system-ui, sans-serif;
+    --radius: 24px;
+    --wrap: 1200px;
+    --gutter: clamp(16px, 5vw, 64px);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--body); color: var(--ink); background: var(--cream); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+  h1, h2, h3 { font-family: var(--display); font-weight: 800; letter-spacing: -0.02em; line-height: 1.02; }
+  h2 { font-size: clamp(32px, 4.6vw, 56px); }
+
+  /* Header */
+  .nav { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--orange) 92%, transparent); backdrop-filter: blur(10px); color: var(--white); }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
+  .logo { font-family: var(--display); font-weight: 800; font-size: 18px; }
+  .logo span { color: var(--peach); }
+  .nav ul { display: flex; gap: 28px; list-style: none; font-weight: 600; font-size: 15px; }
+  .nav ul a { opacity: .85; transition: opacity .2s; }
+  .nav ul a:hover { opacity: 1; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: var(--body); font-weight: 700; font-size: 16px; border: 0; border-radius: 999px; padding: 14px 28px; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease, background .2s; }
+  .btn:active { transform: scale(.97); }
+  .btn-white { background: var(--white); color: var(--orange); }
+  .btn-white:hover { box-shadow: 0 10px 30px rgba(0,0,0,.18); }
+  .btn-orange { background: var(--orange); color: var(--white); box-shadow: 0 10px 30px rgba(200,86,31,.35); }
+  .btn-orange:hover { background: var(--orange-deep); }
+  .nav .btn { padding: 10px 20px; font-size: 14px; }
+
+  /* Hero */
+  .hero { display: grid; grid-template-columns: 1.35fr 1fr; min-height: calc(100vh - 68px); background: var(--orange); color: var(--white); }
+  .hero-copy { display: flex; flex-direction: column; justify-content: space-between; padding: clamp(32px, 6vw, 72px) var(--gutter); gap: 48px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip { font-weight: 600; font-size: 15px; padding: 8px 18px; border-radius: 999px; border: 1.5px solid rgba(255,255,255,.55); }
+  .chip.solid { background: var(--white); color: var(--orange); border-color: var(--white); }
+  .hero h1 { font-size: clamp(48px, 8.4vw, 120px); }
+  .hero h1 em { font-style: normal; color: var(--peach); display: block; }
+  .hero p { font-size: clamp(18px, 1.8vw, 24px); max-width: 30ch; margin-top: 24px; opacity: .95; }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+  .btn-ghost { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.55); }
+  .btn-ghost:hover { background: rgba(255,255,255,.1); }
+  .hero-img { position: relative; overflow: hidden; }
+  .hero-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; animation: drift 18s ease-in-out infinite alternate; }
+  @keyframes drift { from { transform: scale(1.04) rotate(0deg); } to { transform: scale(1.12) rotate(4deg); } }
+
+  section { padding: clamp(72px, 10vw, 128px) 0; }
+
+  /* Audience */
+  .audience h2 { margin-bottom: 40px; }
+  .cards3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .acard { min-height: 340px; border-radius: var(--radius); padding: 36px; display: flex; flex-direction: column; justify-content: space-between; transition: transform .3s ease; }
+  .acard:hover { transform: translateY(-6px); }
+  .acard .num { font-family: var(--display); font-weight: 800; font-size: 64px; line-height: 1; }
+  .acard p { font-size: 20px; font-weight: 500; line-height: 1.4; }
+  .acard:nth-child(1) { background: var(--orange); color: var(--white); }
+  .acard:nth-child(1) .num { color: var(--peach); }
+  .acard:nth-child(2) { background: var(--orange-deep); color: var(--white); }
+  .acard:nth-child(2) .num { color: var(--ink); }
+  .acard:nth-child(3) { background: var(--white); }
+  .acard:nth-child(3) .num { color: var(--orange); }
+
+  /* Program */
+  .program { background: var(--white); }
+  .program-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 40px; flex-wrap: wrap; }
+  .count { display: flex; align-items: baseline; gap: 10px; }
+  .count b { font-family: var(--display); font-weight: 800; font-size: clamp(56px, 6vw, 80px); color: var(--orange); line-height: 1; }
+  .count span { font-size: 18px; font-weight: 500; }
+  .modules { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .mcard { border-radius: var(--radius); overflow: hidden; background: var(--cream); transition: transform .3s ease, box-shadow .3s ease; }
+  .mcard:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(42,28,20,.12); }
+  .mcard .ph { aspect-ratio: 1538 / 1138; overflow: hidden; }
+  .mcard .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+  .mcard:hover .ph img { transform: scale(1.05); }
+  .mcard footer { display: flex; justify-content: space-between; align-items: center; padding: 24px 32px; gap: 12px; }
+  .mcard h3 { font-size: clamp(20px, 2.2vw, 28px); color: var(--orange); }
+  .mcard footer span { font-weight: 500; white-space: nowrap; }
+
+  /* Module detail */
+  .detail { display: grid; grid-template-columns: 1fr 1.15fr; background: var(--cream); padding: 0; }
+  .detail + .detail { border-top: 1px solid var(--line); }
+  .detail .ph { position: relative; min-height: 520px; overflow: hidden; }
+  .detail .ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .detail .copy { padding: clamp(48px, 7vw, 96px) var(--gutter); display: flex; flex-direction: column; justify-content: center; }
+  .pill { align-self: flex-start; background: var(--orange); color: var(--white); font-weight: 700; font-size: 15px; padding: 8px 18px; border-radius: 999px; }
+  .detail h2 { margin: 24px 0 28px; }
+  .detail ul { list-style: none; max-width: 560px; }
+  .detail li { font-size: clamp(18px, 1.6vw, 22px); padding: 18px 0; border-bottom: 1px solid var(--line); display: flex; gap: 16px; }
+  .detail li:last-child { border-bottom: 0; }
+  .detail li::before { content: "✳"; color: var(--orange); flex: none; }
+  .detail.flip .ph { order: 2; }
+
+  /* Pricing */
+  .pricing { background: var(--brown); color: var(--white); }
+  .pricing-head { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-bottom: 40px; flex-wrap: wrap; }
+  .plans { display: grid; grid-template-columns: 1fr 1fr 1.25fr; gap: 20px; }
+  .plan { background: var(--brown-card); border-radius: var(--radius); padding: 36px; min-height: 400px; display: flex; flex-direction: column; }
+  .plan h3 { font-size: 28px; }
+  .plan .sub { opacity: .8; margin-top: 8px; font-size: 17px; }
+  .plan .badge { align-self: flex-start; background: var(--ink); color: var(--white); font-weight: 600; font-size: 14px; padding: 6px 14px; border-radius: 999px; margin-bottom: 14px; }
+  .plan.best { background: var(--peach); color: var(--ink); }
+  .plan.best .sub { opacity: .85; }
+  .plan .price { margin-top: auto; padding-top: 32px; font-family: var(--display); font-weight: 800; font-size: 48px; line-height: 1; filter: blur(14px); opacity: .5; transition: filter .6s ease, opacity .6s ease; user-select: none; }
+  .plan .price small { font-size: 18px; font-weight: 700; margin-left: 6px; }
+  .pricing.revealed .plan .price { filter: none; opacity: 1; user-select: auto; }
+  .plan .btn { margin-top: 24px; }
+  .plan.best .btn { background: var(--orange); color: var(--white); }
+  .plan:not(.best) .btn { background: rgba(255,255,255,.1); color: var(--white); }
+  .plan:not(.best) .btn:hover { background: rgba(255,255,255,.18); }
+
+  /* Signup */
+  .signup { display: grid; grid-template-columns: 1.6fr 1fr; background: var(--orange-deep); color: var(--white); padding: 0; }
+  .signup .copy { padding: clamp(64px, 9vw, 120px) var(--gutter); display: flex; flex-direction: column; justify-content: center; }
+  .signup h2 { font-size: clamp(44px, 6.6vw, 88px); }
+  .signup p { font-size: clamp(18px, 1.8vw, 24px); margin: 24px 0 36px; max-width: 26ch; }
+  .signup form { display: flex; background: var(--white); border-radius: 999px; padding: 6px; max-width: 520px; }
+  .signup input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; padding: 0 20px; font: 500 17px var(--body); color: var(--ink); }
+  .signup form .btn { background: var(--orange); color: var(--white); }
+  .signup .note { font-size: 15px; margin: 14px 0 0 20px; opacity: .85; min-height: 1.5em; }
+  .signup .ph { position: relative; min-height: 480px; overflow: hidden; }
+  .signup .ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+  .foot { background: var(--brown); color: rgba(255,255,255,.6); font-size: 14px; padding: 28px 0; }
+  .foot .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+  /* Reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .hero-img img { animation: none; }
+    html { scroll-behavior: auto; }
+  }
+
+  @media (max-width: 960px) {
+    .nav ul { display: none; }
+    .hero, .detail, .signup { grid-template-columns: 1fr; }
+    .hero-img { min-height: 360px; order: -1; }
+    .detail .ph, .signup .ph { min-height: 320px; }
+    .detail.flip .ph { order: 0; }
+    .cards3, .modules, .plans { grid-template-columns: 1fr; }
+    .acard { min-height: 220px; }
+    .plan { min-height: 0; }
+  }
+  @media (max-width: 480px) {
+    .signup form { flex-direction: column; border-radius: 20px; gap: 6px; }
+    .signup input { padding: 14px 16px; }
+    .mcard footer { padding: 20px; }
+    .acard, .plan { padding: 28px; }
+  }
+  @media (max-width: 380px) {
+    .logo { font-size: 15px; }
+    .nav .btn { padding: 9px 14px; font-size: 13px; }
+    .hero h1 { font-size: 42px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="#" class="logo">ChatGPT <span>+ Claude</span></a>
+    <ul>
+      <li><a href="#kimin">Kimin üçün</a></li>
+      <li><a href="#proqram">Proqram</a></li>
+      <li><a href="#qiymetler">Qiymətlər</a></li>
+    </ul>
+    <a href="#qeydiyyat" class="btn btn-white">Qeydiyyat</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-copy">
+    <div class="chips">
+      <span class="chip solid">Video kurs</span>
+      <span class="chip">Sıfırdan başlayanlar üçün</span>
+    </div>
+    <div>
+      <h1>ChatGPT<em>+ Claude</em></h1>
+      <p>İki süni intellekt köməkçisi ilə ilk addımdan işləməyi öyrənin</p>
+      <div class="actions">
+        <a href="#qeydiyyat" class="btn btn-white">Kursa yazıl</a>
+        <a href="#proqram" class="btn btn-ghost">Proqrama bax</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-img"><img src="assets/flower-1600.webp" srcset="assets/flower-800.webp 800w, assets/flower-1600.webp 1215w" sizes="(max-width: 960px) 100vw, 43vw" width="1215" height="1600" alt="" fetchpriority="high"></div>
+</header>
+
+<section class="audience" id="kimin">
+  <div class="wrap">
+    <h2 class="reveal">Kurs kimin üçündür</h2>
+    <div class="cards3">
+      <article class="acard reveal"><span class="num">01</span><p>Süni intellektlə heç vaxt işləməyənlər</p></article>
+      <article class="acard reveal"><span class="num">02</span><p>ChatGPT və ya Claude-u açıb, nə yazacağını bilməyənlər</p></article>
+      <article class="acard reveal"><span class="num">03</span><p>Gündəlik işlərdə vaxta qənaət etmək istəyənlər</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="program" id="proqram">
+  <div class="wrap">
+    <div class="program-head reveal">
+      <h2>Kursun proqramı</h2>
+      <div class="count"><b>20</b><span>video dərs</span></div>
+    </div>
+    <div class="modules">
+      <a href="#modul-1" class="mcard reveal">
+        <div class="ph"><img src="assets/modul-claude-1600.webp" srcset="assets/modul-claude-800.webp 800w, assets/modul-claude-1600.webp 1600w" sizes="(max-width: 960px) 100vw, 600px" width="1600" height="1184" alt="Claude modulu" loading="lazy" decoding="async"></div>
+        <footer><h3>Modul 1 · Claude</h3><span>10 dərs</span></footer>
+      </a>
+      <a href="#modul-2" class="mcard reveal">
+        <div class="ph"><img src="assets/modul-chatgpt-1600.webp" srcset="assets/modul-chatgpt-800.webp 800w, assets/modul-chatgpt-1600.webp 1600w" sizes="(max-width: 960px) 100vw, 600px" width="1600" height="1184" alt="ChatGPT modulu" loading="lazy" decoding="async"></div>
+        <footer><h3>Modul 2 · ChatGPT</h3><span>10 dərs</span></footer>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="detail" id="modul-1">
+  <div class="ph"><img src="assets/claude-1600.webp" srcset="assets/claude-800.webp 800w, assets/claude-1600.webp 1333w" sizes="(max-width: 960px) 100vw, 47vw" width="1333" height="1600" alt="" loading="lazy" decoding="async"></div>
+  <div class="copy reveal">
+    <span class="pill">Modul 1 · 10 dərs</span>
+    <h2>Claude ilə iş</h2>
+    <ul>
+      <li>Claude-a necə daxil olmaq</li>
+      <li>İnterfeys necə qurulub</li>
+      <li>İlk dəfədən yaxşı nəticə almaq üçün tapşırığı necə yazmaq</li>
+    </ul>
+  </div>
+</section>
+
+<section class="detail flip" id="modul-2">
+  <div class="ph"><img src="assets/chatgpt-1600.webp" srcset="assets/chatgpt-800.webp 800w, assets/chatgpt-1600.webp 1333w" sizes="(max-width: 960px) 100vw, 47vw" width="1333" height="1600" alt="" loading="lazy" decoding="async"></div>
+  <div class="copy reveal">
+    <span class="pill">Modul 2 · 10 dərs</span>
+    <h2>ChatGPT ilə iş</h2>
+    <ul>
+      <li>ChatGPT-nin Claude-dan fərqi</li>
+      <li>Hansı işləri daha yaxşı görür</li>
+      <li>Hər iki köməkçini birlikdə necə istifadə etmək</li>
+    </ul>
+  </div>
+</section>
+
+<section class="pricing" id="qiymetler">
+  <div class="wrap">
+    <div class="pricing-head reveal">
+      <h2>Qiymətlər</h2>
+      <button class="btn btn-orange" id="showPrices" type="button">Qiymətləri göstər</button>
+    </div>
+    <div class="plans">
+      <!-- Tək modul qiymətləri dizaynda gizlidir — real qiyməti data-price-a yazın -->
+      <article class="plan reveal">
+        <h3>ChatGPT</h3>
+        <p class="sub">Modul 2 · 10 dərs</p>
+        <div class="price" data-price="—">—<small>AZN</small></div>
+        <a href="#qeydiyyat" class="btn" data-plan="ChatGPT">Seç</a>
+      </article>
+      <article class="plan reveal">
+        <h3>Claude</h3>
+        <p class="sub">Modul 1 · 10 dərs</p>
+        <div class="price" data-price="—">—<small>AZN</small></div>
+        <a href="#qeydiyyat" class="btn" data-plan="Claude">Seç</a>
+      </article>
+      <article class="plan best reveal">
+        <span class="badge">Ən sərfəli</span>
+        <h3>ChatGPT + Claude</h3>
+        <p class="sub">2 modul · 20 dərs</p>
+        <div class="price">32<small>AZN</small></div>
+        <a href="#qeydiyyat" class="btn" data-plan="ChatGPT + Claude">Hər ikisini al</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="signup" id="qeydiyyat">
+  <div class="copy reveal">
+    <h2>Qeydiyyat</h2>
+    <p>Bir modul seçin və ya hər ikisini birlikdə 32 AZN-ə alın</p>
+    <form id="signupForm" name="qeydiyyat" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="qeydiyyat">
+      <input type="hidden" name="plan" id="planField" value="ChatGPT + Claude">
+      <p hidden><label>Bunu doldurmayın: <input name="bot-field"></label></p>
+      <input type="tel" name="phone" placeholder="Telefon və ya WhatsApp nömrəniz" required aria-label="Telefon nömrəsi" autocomplete="tel" inputmode="tel">
+      <button class="btn" type="submit">Yazıl</button>
+    </form>
+    <p class="note" id="note" aria-live="polite"></p>
+  </div>
+  <div class="ph"><img src="assets/flower-1600.webp" srcset="assets/flower-800.webp 800w, assets/flower-1600.webp 1215w" sizes="(max-width: 960px) 100vw, 38vw" width="1215" height="1600" alt="" loading="lazy" decoding="async"></div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>ChatGPT + Claude · Video kurs</span>
+    <span>2 modul · 20 video dərs</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = (i % 3) * 80 + 'ms';
+    io.observe(el);
+  });
+
+  const pricing = document.getElementById('qiymetler');
+  const showBtn = document.getElementById('showPrices');
+  showBtn.addEventListener('click', () => {
+    const on = pricing.classList.toggle('revealed');
+    showBtn.textContent = on ? 'Qiymətləri gizlət' : 'Qiymətləri göstər';
+  });
+
+  const planField = document.getElementById('planField');
+  let chosen = 'ChatGPT + Claude';
+  document.querySelectorAll('[data-plan]').forEach((b) => b.addEventListener('click', () => { chosen = b.dataset.plan; planField.value = chosen; }));
+
+  // Netlify Forms: müraciətlər Netlify panelində → Forms → "qeydiyyat" bölməsində görünür
+  const form = document.getElementById('signupForm');
+  const note = document.getElementById('note');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button');
+    btn.disabled = true;
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString(),
+      });
+      if (!res.ok) throw new Error(res.status);
+      note.textContent = `Təşəkkürlər! „${chosen}" üçün sizinlə tezliklə əlaqə saxlayacağıq.`;
+      form.reset();
+      planField.value = chosen;
+    } catch (err) {
+      note.textContent = 'Göndərmək alınmadı. Bir az sonra yenidən cəhd edin.';
+    } finally {
+      btn.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>

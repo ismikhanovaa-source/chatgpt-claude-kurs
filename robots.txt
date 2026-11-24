@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chatgpt-claude-kurs.netlify.app/sitemap.xml
