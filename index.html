@@ -384,7 +384,8 @@
   let chosen = 'ChatGPT + Claude';
   document.querySelectorAll('[data-plan]').forEach((b) => b.addEventListener('click', () => { chosen = b.dataset.plan; planField.value = chosen; }));
 
-  // Netlify Forms: müraciətlər Netlify panelində → Forms → "qeydiyyat" bölməsində görünür
+  // Göndərmə ünvanı <form action="..."> atributundan götürülür.
+  // Netlify-da "/" (Netlify Forms). Öz serverdə action-u backend endpoint-ə dəyişin, məs. "/api/qeydiyyat".
   const form = document.getElementById('signupForm');
   const note = document.getElementById('note');
   form.addEventListener('submit', async (e) => {
@@ -392,7 +393,7 @@
     const btn = form.querySelector('button');
     btn.disabled = true;
     try {
-      const res = await fetch('/', {
+      const res = await fetch(form.getAttribute('action') || '/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(new FormData(form)).toString(),
