@@ -64,7 +64,7 @@
   /* Header */
   .nav { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--orange) 92%, transparent); backdrop-filter: blur(10px); color: var(--white); }
   .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
-  .logo { font-family: var(--display); font-weight: 800; font-size: 18px; }
+  .logo { font-family: var(--display); font-weight: 800; font-size: 18px; white-space: nowrap; }
   .logo span { color: var(--peach); }
   .nav ul { display: flex; gap: 28px; list-style: none; font-weight: 600; font-size: 15px; }
   .nav ul a { opacity: .85; transition: opacity .2s; }
@@ -76,6 +76,11 @@
   .btn-orange { background: var(--orange); color: var(--white); box-shadow: 0 10px 30px rgba(200,86,31,.35); }
   .btn-orange:hover { background: var(--orange-deep); }
   .nav .btn { padding: 10px 20px; font-size: 14px; }
+  .nav-actions { display: flex; align-items: center; gap: 18px; }
+  .nav-login { font-weight: 600; font-size: 15px; opacity: .85; transition: opacity .2s; white-space: nowrap; }
+  .nav-login:hover { opacity: 1; }
+  .foot-link { color: rgba(255,255,255,.85); font-weight: 600; transition: color .2s; }
+  .foot-link:hover { color: var(--peach); }
 
   /* Hero */
   .hero { display: grid; grid-template-columns: 1.35fr 1fr; min-height: calc(100vh - 68px); background: var(--orange); color: var(--white); }
@@ -200,6 +205,15 @@
   @media (max-width: 380px) {
     .logo { font-size: 15px; }
     .nav .btn { padding: 9px 14px; font-size: 13px; }
+    .nav-actions { gap: 12px; }
+    .nav-login { font-size: 13px; }
+  }
+  @media (max-width: 350px) {
+    .nav .wrap { gap: 10px; }
+    .logo { font-size: 13px; }
+    .nav-actions { gap: 10px; }
+    .nav .btn { padding: 8px 12px; font-size: 12.5px; }
+    .nav-login { font-size: 12.5px; }
     .hero h1 { font-size: 42px; }
   }
 </style>
@@ -214,7 +228,10 @@
       <li><a href="#proqram">Proqram</a></li>
       <li><a href="#qiymetler">Qiymətlər</a></li>
     </ul>
-    <a href="#qeydiyyat" class="btn btn-white">Qeydiyyat</a>
+    <div class="nav-actions">
+      <a href="https://learning.octotech.az/login" class="nav-login">Daxil ol</a>
+      <a href="#qeydiyyat" class="btn btn-white">Qeydiyyat</a>
+    </div>
   </div>
 </nav>
 
@@ -342,6 +359,7 @@
 <footer class="foot">
   <div class="wrap">
     <span>ChatGPT + Claude · Video kurs</span>
+    <a href="https://learning.octotech.az/login" class="foot-link">Tələbə girişi → Dərslər</a>
     <span>2 modul · 20 video dərs</span>
   </div>
 </footer>
